@@ -12,7 +12,7 @@ public class Player : MonoBehaviour {
 	public OuyaPlayer playerNumber;
 
 	void Start() {
-		if (GameController.GameType != GameController.GameType.DiscArena) {
+		if (GameController.currentGame != GameController.GameType.DiscArena) {
 			transform.FindChild("DiscShooter").GetComponent<DiscShooter>().enabled = false;
 		}
 	}

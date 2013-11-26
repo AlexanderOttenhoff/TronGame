@@ -393,8 +393,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  numDiscs: 3
-  isFacingWall: 0
   projectile: {fileID: 5400000, guid: 274ac96b55eee924aaa4d171fcd81db2, type: 2}
 --- !u!65 &534912213
 BoxCollider:
@@ -1335,9 +1333,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  numDiscs: 3
+  ammunition: 3
+  dualAnalogMovement: 0
   isFacingWall: 0
-  projectile: {fileID: 5400000, guid: 274ac96b55eee924aaa4d171fcd81db2, type: 2}
   playerNumber: 1
 --- !u!23 &1504240980
 Renderer:
