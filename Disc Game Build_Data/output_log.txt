@@ -1,0 +1,137 @@
+Initialize engine version: 4.2.2f1 (54f0fc09defb)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nvd3dumx.dll 9.18.13.2723]
+    Renderer: NVIDIA GeForce GTX 670M
+    Vendor:   NVIDIA
+    VRAM:     3019 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 DF24=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Otter\Documents\TronGame\Disc Game Build_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Otter\Documents\TronGame\Disc Game Build_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Otter\Documents\TronGame\Disc Game Build_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Otter\Documents\TronGame\Disc Game Build_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Otter\Documents\TronGame\Disc Game Build_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Otter\Documents\TronGame\Disc Game Build_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Otter\Documents\TronGame\Disc Game Build_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\Otter\Documents\TronGame\Disc Game Build_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\Otter\Documents\TronGame\Disc Game Build_Data\Managed\NGUI.dll (this message is harmless)
+Loading C:\Users\Otter\Documents\TronGame\Disc Game Build_Data\Managed\NGUI.dll into Unity Child Domain
+- Completed reload, in  0.074 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Platform assembly: C:\Users\Otter\Documents\TronGame\Disc Game Build_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Otter\Documents\TronGame\Disc Game Build_Data\Managed\System.Core.dll (this message is harmless)
+Disc(Clone) (Disc) collided with Wall (UnityEngine.GameObject) (0.0, 0.0, -20.0)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Player (UnityEngine.GameObject) (0.0, 0.0, 28.1)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Player (Player) collided with Disc(Clone) (UnityEngine.GameObject) (0.0, 0.0, -28.1)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Wall (UnityEngine.GameObject) (0.0, 0.0, 0.0)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Disc(Clone) (UnityEngine.GameObject) (0.0, 0.0, 0.0)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Disc(Clone) (UnityEngine.GameObject) (0.0, 0.0, 0.0)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Wall (UnityEngine.GameObject) (20.0, 0.0, 0.0)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Wall (UnityEngine.GameObject) (-5.3, 0.0, 19.3)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Player (UnityEngine.GameObject) (-20.0, 0.0, 0.3)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Player (Player) collided with Disc(Clone) (UnityEngine.GameObject) (20.0, 0.0, -0.3)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Wall (UnityEngine.GameObject) (-0.9, 0.0, -20.0)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Wall (UnityEngine.GameObject) (0.3, 0.0, 20.0)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Player (UnityEngine.GameObject) (0.0, 0.0, -20.0)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Player (Player) collided with Disc(Clone) (UnityEngine.GameObject) (0.0, 0.0, 20.0)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Wall (UnityEngine.GameObject) (-20.0, 0.0, -1.3)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Disc(Clone) (UnityEngine.GameObject) (39.9, 0.0, 0.2)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Disc(Clone) (UnityEngine.GameObject) (-39.9, 0.0, -0.2)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Wall (UnityEngine.GameObject) (-12.7, 0.0, -15.5)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Wall (UnityEngine.GameObject) (12.1, 0.0, -15.9)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Wall (UnityEngine.GameObject) (14.0, 0.0, 14.2)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Wall (UnityEngine.GameObject) (16.1, 0.0, -11.9)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Wall (UnityEngine.GameObject) (13.2, 0.0, 15.0)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Wall (UnityEngine.GameObject) (-17.5, 0.0, -9.7)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Disc(Clone) (UnityEngine.GameObject) (11.4, 0.0, -38.2)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
+Disc(Clone) (Disc) collided with Disc(Clone) (UnityEngine.GameObject) (-11.4, 0.0, 38.2)
+ 
+(Filename: C:/BuildAgent/work/ea95e74f6e5f192d/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 54)
+
