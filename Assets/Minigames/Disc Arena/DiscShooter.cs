@@ -14,7 +14,7 @@ public class DiscShooter : MonoBehaviour {
 	}
 
 	void Update () {
-		bool inShoot = OuyaInput.GetButtonDown(OuyaButton.LB, player.playerNumber) || OuyaInput.GetButtonDown(OuyaButton.RB, player.playerNumber);
+		bool inShoot = OuyaInput.GetButtonDown(OuyaButton.RB, player.playerNumber);
 
 		if (inShoot && player.ammunition>0 && !player.isFacingWall) {
 			Fire();

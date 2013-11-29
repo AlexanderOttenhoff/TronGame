@@ -15,7 +15,7 @@ public static class GameController {
 		private set { _currentGame = value; }
 	}
 
-	private static GameType _currentGame = GameType.None;
+	private static GameType _currentGame = GameType.DiscArena;
 
 	public static int numPlayers {get; set;}
 
