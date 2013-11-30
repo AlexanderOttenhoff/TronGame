@@ -11,7 +11,7 @@ public class PillarDetect : MonoBehaviour {
 	public string lastActivePlayer = "";
 	public string associatedPlayerHook;
 
-	
+	/*
 	void Start () {
 
 		// scale all ownership planes on start
@@ -68,5 +68,5 @@ public class PillarDetect : MonoBehaviour {
 			this.lastActivePlayer = other.name;
 		}
 		
-	}
+	}*/
 }

@@ -7,7 +7,7 @@ public class PlayerDetect : MonoBehaviour {
 	public int ownCaptured = 0;
 	public string playerHook = "";
 	public string playerColor;
-
+/*
 
 	// Update is called once per frame
 	void Update () {
@@ -69,5 +69,5 @@ public class PlayerDetect : MonoBehaviour {
 				break;
 		}
 
-	}
+	}*/
 }
