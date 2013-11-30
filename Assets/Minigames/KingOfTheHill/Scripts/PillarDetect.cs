@@ -10,7 +10,7 @@ public class PillarDetect : MonoBehaviour {
 	public string activePlayer = "";
 	public string lastActivePlayer = "";
 
-	
+	/*
 	void Start () {
 	
 	}
@@ -61,5 +61,5 @@ public class PillarDetect : MonoBehaviour {
 			this.lastActivePlayer = other.name;
 		}
 		
-	}
+	}*/
 }
