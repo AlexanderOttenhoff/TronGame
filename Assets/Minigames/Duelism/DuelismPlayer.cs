@@ -27,6 +27,7 @@ public class DuelismPlayer : MonoBehaviour {
 	private int captureCount = 0;
 	public GameObject spawnPoint;
 	public Quaternion originalRotationValue;
+	public GUIText winText;
 
 	void Start() {
 		Reset();
@@ -34,6 +35,7 @@ public class DuelismPlayer : MonoBehaviour {
 		controller = GetComponent<CharacterController>();
 		flag.SetActive(false);
 		originalRotationValue = transform.rotation;
+		winText.text = "";
 	}
 
 	public void Reset() {
@@ -46,7 +48,10 @@ public class DuelismPlayer : MonoBehaviour {
 		if(!isAlive)
 		{
 			Die ();
-		} else {
+		} if(captureCount > 2) { 
+			winText.text = gameObject.transform.name;
+			winText.text +=  " wins";
+		}else {
 			float now = Time.time;
 //		bool inShoot = OuyaInput.GetButtonDown(OuyaButton.LB, playerNumber) || OuyaInput.GetButtonDown(OuyaButton.RB, playerNumber);
 			Vector2 inLeft = new Vector2(OuyaInput.GetAxis(OuyaAxis.LX, playerNumber), OuyaInput.GetAxis(OuyaAxis.LY, playerNumber));
