@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-public class Player : MonoBehaviour {
+
+[RequireComponent(typeof(CharacterController))]
+public class MonocyclePlayer : MonoBehaviour {
 
 	public float speed = 10f;
 	public float rotateSpeed = 3.0f;
@@ -19,23 +21,18 @@ public class Player : MonoBehaviour {
 	public float dashCD = 1.0f;
 	private bool inDash = false;
 
-	public Object ExplosionPrefab;
-
 	CharacterController controller;
 	public OuyaPlayer playerNumber;
 
 	void Start() {
 		Reset();
 		dashStartTime = Time.time;
+		controller = GetComponent<CharacterController>();
 	}
 
 	public void Reset() {
 		if (GameController.currentGame != GameController.GameType.DiscArena) {
-<<<<<<< HEAD
 			//transform.FindChild("DiscShooter").GetComponent<DiscShooter>().enabled = false;
-=======
-//			transform.FindChild("DiscShooter").GetComponent<DiscShooter>().enabled = false;
->>>>>>> ef5dd86000d8211e61f07decafeb98d47badd438
 		}
 	}
 
@@ -57,7 +54,7 @@ public class Player : MonoBehaviour {
 			{
 				inDash = false;
 			} else {
-				rigidbody.velocity = dashDirection * dashSpeed;
+				controller.Move(dashDirection * dashSpeed * Time.deltaTime);
 			}
 		} else {
 			Move (inLeft.x, inLeft.y);
@@ -71,7 +68,6 @@ public class Player : MonoBehaviour {
 				}
 			}
 		}
-		rigidbody.MovePosition(new Vector3(rigidbody.position.x, 0, rigidbody.position.z));
 	}
 
 	void objectRotate (float horizontal, float vertical)
@@ -99,24 +95,68 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	//		float now = Time.time;
+	
+	//		if (inSword) {
+	//			Vector3 swing;
+	//			if(rx != 0f || ry != 0f) {
+	//				swing = new Vector3(rx, 0.0f, ry);
+	//				hand.transform.rotation = Quaternion.LookRotation(swing, Vector3.up);
+	//				
+	//			} else {
+	//				swing = new Vector3(0.0f, 0.0f, 0.0f);
+//				hand.transform.rotation = transform.localRotation;
+//			}
+//			swingStart = now;
+//			sword.SetActive(true);
+//		}
+//		if(sword.activeSelf) {
+//			if(now - swingStart > swingLength) {
+//				sword.SetActive (false);
+//			} else {
+//				hand.transform.Rotate(Vector3.up * Time.deltaTime * swingSpeed);
+//			}
+//		}
+		
+//		if (inDash) {
+//			if(dash == false && now - dashStart > dashCD) {
+//				if(rx != 0f || ry != 0f) {
+//					movement = new Vector3(rx, 0.0f, ry);
+//					transform.rotation = Quaternion.LookRotation(movement, Vector3.up);
+//					
+//					dash = true;
+//					dashStart = now;
+//				}
+//			}
+//		} 
+//		if(now - dashStart > dashLength)
+//		{
+//			dash = false;
+//		}
+//		if(dash) {
+//			controller.Move(movement * dashSpeed * Time.deltaTime);
+//		} else {
+//			movement = new Vector3(h, 0.0f, m);
+//			controller.Move(movement * speed * Time.deltaTime);
+//			if(h != 0f || m != 0f)
+//				rotating(h, m);
+//		}
+	
 	private void Move(float mvX, float mvY) {
-		rigidbody.velocity = speed * new Vector3(mvX, 0, mvY);
+		controller.Move(speed * new Vector3(mvX, 0, mvY) * Time.deltaTime);
+
 	}
 
 	private void Die() {
 		//Initiate death animation
-        Debug.Log("I'm Dead :`(");
 		enabled = false;
-		Instantiate(ExplosionPrefab, transform.position, transform.rotation);
-		Destroy (this.gameObject);
+		Destroy (this);
 	}
 
 	void OnControllerColliderHit(ControllerColliderHit hit){
-		if (GameController.currentGame == GameController.GameType.DiscArena) {
-			if (hit.gameObject.tag == "Disc") {
-				Disc disc = hit.gameObject.GetComponent<Disc>();
-				HandleDiscCollision(disc);
-			}
+		if (hit.gameObject.tag == "Disc") {
+			Disc disc = hit.gameObject.GetComponent<Disc>();
+			HandleDiscCollision(disc);
 		}
 	}
 
@@ -126,7 +166,7 @@ public class Player : MonoBehaviour {
 			ammunition += 1;
 			isFacingWall = false;
 		} else {
-            Die();
+			enabled = false;
 		}
 	}
 
