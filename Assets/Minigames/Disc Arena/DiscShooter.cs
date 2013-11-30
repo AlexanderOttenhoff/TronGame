@@ -10,6 +10,7 @@ public class DiscShooter : MonoBehaviour {
 
 	void Start() {
 		Transform t = transform.parent;
+
 		player = (Player) t.GetComponent<Player>();
 	}
 

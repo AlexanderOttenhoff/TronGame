@@ -31,11 +31,7 @@ public class Player : MonoBehaviour {
 
 	public void Reset() {
 		if (GameController.currentGame != GameController.GameType.DiscArena) {
-<<<<<<< HEAD
-			//transform.FindChild("DiscShooter").GetComponent<DiscShooter>().enabled = false;
-=======
-//			transform.FindChild("DiscShooter").GetComponent<DiscShooter>().enabled = false;
->>>>>>> ef5dd86000d8211e61f07decafeb98d47badd438
+
 		}
 	}
 

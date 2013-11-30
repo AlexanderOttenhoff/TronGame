@@ -6,31 +6,32 @@ public class Disc : MonoBehaviour {
 	
 	public float speed = 20f;
 	public OuyaPlayer playerOwner;
-
-	private Vector3 lastPosition;
-
-	void Start () {
-		lastPosition = transform.position;
-	}
-
+	
 	public void SetOwner(OuyaPlayer owner) {
 		playerOwner = owner;
 	}
 
-	void FixedUpdate() {
-		//rigidbody.velocity = speed * rigidbody.velocity.normalized;
-
-		Vector3 direction = new Vector3(transform.position - lastPosition);
-		Ray ray = new Ray(lastPosition, direction);
-		RaycastHit hit;
-		if (Physics.Raycast(ray, hit, direction.magnitude)) {
-			// Do something if hit
-		}
-
-		this.lastPosition = transform.position;
+	void Start() {
+		rigidbody.velocity = speed * transform.TransformDirection(Vector3.forward);
 	}
 
-	
+	void Update() {
+		//rigidbody.velocity = speed * transform.TransformDirection(Vector3.forward) * Time.deltaTime;
+		Debug.DrawRay(transform.position, rigidbody.velocity, Color.red);
+
+		RaycastHit hit;
+		Ray ray = new Ray(transform.position, transform.forward);
+		if (Physics.Raycast(ray, out hit, speed * Time.deltaTime)) {
+			Debug.DrawLine(transform.position, hit.point, Color.red);
+			//Debug.DrawRay(hit.point, reflectVec, Color.green);
+
+			if (hit.distance < speed * Time.deltaTime) {
+				print(hit.distance.ToString() + "/" + (speed * Time.deltaTime).ToString());
+			}
+			
+		}
+	}
+
 	void OnCollisionEnter(Collision collision) {
 //		Debug.Log(this.ToString() + " collided with " + collision.gameObject.ToString() + " " + collision.relativeVelocity);
 		if (collision.gameObject.tag == "Player") {
