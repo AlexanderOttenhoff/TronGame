@@ -25,6 +25,7 @@ public class DuelismPlayer : MonoBehaviour {
 	public bool isAlive = true;
 	public GameObject flag;
 	private int captureCount = 0;
+	public GameObject spawnPoint;
 
 	void Start() {
 		Reset();
@@ -42,7 +43,7 @@ public class DuelismPlayer : MonoBehaviour {
 	void Update () {
 		if(!isAlive)
 		{
-			transform.rotation = Random.rotation;
+			Die ();
 		} else {
 			float now = Time.time;
 //		bool inShoot = OuyaInput.GetButtonDown(OuyaButton.LB, playerNumber) || OuyaInput.GetButtonDown(OuyaButton.RB, playerNumber);
@@ -109,12 +110,23 @@ public class DuelismPlayer : MonoBehaviour {
 	}
 
 	private void Die() {
-		//Initiate death animation
-		enabled = false;
-		Destroy (this);
+		/*if(transform.position.y < 50)
+			transform.position.y += 7;
+		if(transform.position.y < 50)
+			transform.position.y += 5;
+		if(transform.position.x < spawnPoint.transform.position.x + 15)
+			transform.position.x += 15;
+		else if(transform.position.x > spawnPoint.transform.position.x - 20)
+			transform.position.x -= 15;
+		if(transform.position.z < spawnPoint.transform.position.z + 15)
+			transform.position.z += 15;
+		else if(transform.position.z > spawnPoint.transform.position.z - 20)
+			transform.position.z -= 15;*/
+		transform.Translate(spawnPoint.transform.position);
+		transform.rotation = Random.rotation;
 	}
 	
-
+	
 	void OnTriggerEnter(Collider other) {
 		if(other.tag == "Flag") {
 			other.gameObject.SetActive(false);
@@ -131,7 +143,12 @@ public class DuelismPlayer : MonoBehaviour {
 			isAlive = false;
 			Debug.Log("ouch ;'p");
 		}
+		if(!isAlive && other.tag == "Spawn") {
+			isAlive = true;
+			transform.position = spawnPoint.transform.position;
+		}
 	}
+	
 
 	public void HandleSwordHit(GameObject badSword) {
 		isAlive = false;
