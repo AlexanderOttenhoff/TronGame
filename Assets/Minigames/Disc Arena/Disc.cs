@@ -3,7 +3,7 @@ using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Disc : MonoBehaviour {
-	
+
 	public float speed = 20f;
 	public OuyaPlayer playerOwner;
 
@@ -12,7 +12,7 @@ public class Disc : MonoBehaviour {
 	void Start () {
 		lastPosition = transform.position;
 	}
-
+	/*
 	public void SetOwner(OuyaPlayer owner) {
 		playerOwner = owner;
 	}
@@ -43,5 +43,5 @@ public class Disc : MonoBehaviour {
 //			hasLeftPlayer = true;
 //			Debug.Log(this.ToString() + " has left "  + collision.gameObject.ToString());
 //		}
-//	}
+//	}*/
 }

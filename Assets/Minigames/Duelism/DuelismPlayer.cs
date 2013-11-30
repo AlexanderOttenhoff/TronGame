@@ -26,12 +26,14 @@ public class DuelismPlayer : MonoBehaviour {
 	public GameObject flag;
 	private int captureCount = 0;
 	public GameObject spawnPoint;
+	public Quaternion originalRotationValue;
 
 	void Start() {
 		Reset();
 		dashStartTime = Time.time;
 		controller = GetComponent<CharacterController>();
 		flag.SetActive(false);
+		originalRotationValue = transform.rotation;
 	}
 
 	public void Reset() {
@@ -110,25 +112,28 @@ public class DuelismPlayer : MonoBehaviour {
 	}
 
 	private void Die() {
-		/*if(transform.position.y < 50)
-			transform.position.y += 7;
-		if(transform.position.y < 50)
-			transform.position.y += 5;
-		if(transform.position.x < spawnPoint.transform.position.x + 15)
-			transform.position.x += 15;
-		else if(transform.position.x > spawnPoint.transform.position.x - 20)
-			transform.position.x -= 15;
-		if(transform.position.z < spawnPoint.transform.position.z + 15)
-			transform.position.z += 15;
-		else if(transform.position.z > spawnPoint.transform.position.z - 20)
-			transform.position.z -= 15;*/
-		transform.Translate(spawnPoint.transform.position);
+		Vector3 newPos = transform.position;
+		if(transform.position.y < 10)
+			newPos.y += 2;
+		if(transform.position.y < 15)
+			newPos.y += 1;
+		if(transform.position.x < spawnPoint.transform.position.x + 10)
+			newPos.x += 9;
+		else if(transform.position.x > spawnPoint.transform.position.x - 10)
+			newPos.x -= 9;
+		if(transform.position.z < spawnPoint.transform.position.z + 10)
+			newPos.z += 9;
+		else if(transform.position.z > spawnPoint.transform.position.z - 10)
+			newPos.z -= 9;
+		transform.position = newPos;
 		transform.rotation = Random.rotation;
+	//	transform.Translate(spawnPoint.transform.position * Time.deltaTime);
+
 	}
 	
 	
 	void OnTriggerEnter(Collider other) {
-		if(other.tag == "Flag") {
+		if(other.tag == "Flag" && !flag.activeSelf) {
 			other.gameObject.SetActive(false);
 			flag.SetActive(true);
 		}
@@ -145,8 +150,10 @@ public class DuelismPlayer : MonoBehaviour {
 		}
 		if(!isAlive && other.tag == "Spawn") {
 			isAlive = true;
-			transform.position = spawnPoint.transform.position;
-		}
+			Vector3 spawnLoc = new Vector3(spawnPoint.transform.position.x, 0, spawnPoint.transform.position.z);
+			transform.position = spawnLoc;
+			//transform.position.y = 0;
+			transform.rotation = Quaternion.Slerp(transform.rotation, originalRotationValue, 50);		}
 	}
 	
 
