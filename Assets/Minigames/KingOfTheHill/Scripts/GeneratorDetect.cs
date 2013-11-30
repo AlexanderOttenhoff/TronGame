@@ -4,6 +4,7 @@ using System.Collections;
 public class GeneratorDetect : MonoBehaviour {
 	
 	public float captureProgress = 0;
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -12,8 +13,16 @@ public class GeneratorDetect : MonoBehaviour {
 		// === Generator
 		// check if pillar changes status
 		GameObject[] captured = GameObject.FindGameObjectsWithTag("Captured");
+
+		//Debug.Log(captureProgress);
 		
-		switch (captured.Length) {
+		if(this.captureProgress >= 100) {
+			Debug.Log("GAME OVER from");
+			//GameObject.Find("GameMaster").SendMessage("GameOver", null, SendMessageOptions.DontRequireReceiver);
+			GameOver ();
+		} else {
+
+			switch (captured.Length) {
 			case 0:
 				break;
 			case 1:
@@ -25,14 +34,19 @@ public class GeneratorDetect : MonoBehaviour {
 			case 3: 
 				this.captureProgress = this.captureProgress + 0.1f;
 				break;
-		}
-		
-		//Debug.Log(captureProgress);
-		
-		if(this.captureProgress >= 100) {
-			
-			GameObject.Find("GameMaster").SendMessage("GameOver", null, SendMessageOptions.DontRequireReceiver);
+			}
 		}
 				
+	}
+
+	void GameOver () {
+		GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+		
+		foreach (GameObject player in players) {
+			player.SendMessage("getPlayerProgress", player.name, SendMessageOptions.DontRequireReceiver);
+			//Debug.Log (player.playerProgress);
+			//Debug.Log (player.renderer.material);
+			renderer.material = player.renderer.sharedMaterial;
+		}
 	}
 }
