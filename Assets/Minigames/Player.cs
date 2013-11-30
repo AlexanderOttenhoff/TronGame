@@ -32,7 +32,7 @@ public class Player : MonoBehaviour {
 
 	public void Reset() {
 		if (GameController.currentGame != GameController.GameType.DiscArena) {
-			transform.FindChild("DiscShooter").GetComponent<DiscShooter>().enabled = false;
+//			transform.FindChild("DiscShooter").GetComponent<DiscShooter>().enabled = false;
 		}
 	}
 
@@ -154,9 +154,11 @@ public class Player : MonoBehaviour {
 	}
 
 	void OnControllerColliderHit(ControllerColliderHit hit){
-		if (hit.gameObject.tag == "Disc") {
-			Disc disc = hit.gameObject.GetComponent<Disc>();
-			HandleDiscCollision(disc);
+		if (GameController.currentGame == GameController.GameType.DiscArena) {
+			if (hit.gameObject.tag == "Disc") {
+				Disc disc = hit.gameObject.GetComponent<Disc>();
+				HandleDiscCollision(disc);
+			}
 		}
 	}
 

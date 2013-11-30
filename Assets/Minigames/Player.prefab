@@ -184,10 +184,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  rotateSpeed: 3
+  turnSmoothing: 15
+  speedDampTime: .100000001
   ammunition: 3
   dualAnalogMovement: 0
   isFacingWall: 0
-  playerNumber: 0
+  dashSpeed: 252
+  dashDuration: .25
+  dashCD: 1
+  playerNumber: 1
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
