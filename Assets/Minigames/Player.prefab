@@ -1550,11 +1550,18 @@ MonoBehaviour:
   rotateSpeed: 3
   turnSmoothing: 15
   speedDampTime: .100000001
+<<<<<<< HEAD
   isBike: 0
   ammunition: 3
   dualAnalogMovement: 0
   isFacingWall: 0
   dashSpeed: 200
+=======
+  ammunition: 3
+  dualAnalogMovement: 0
+  isFacingWall: 0
+  dashSpeed: 252
+>>>>>>> ef5dd86000d8211e61f07decafeb98d47badd438
   dashDuration: .25
   dashCD: 1
   playerNumber: 1

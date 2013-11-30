@@ -9,8 +9,20 @@ public class PillarDetect : MonoBehaviour {
 	public int playerCount = 0;
 	public string activePlayer = "";
 	public string lastActivePlayer = "";
+	public string associatedPlayerHook;
+
 	
-	
+	void Start () {
+
+		// scale all ownership planes on start
+		GameObject[] planes = GameObject.FindGameObjectsWithTag("Plane");
+
+		foreach (GameObject plane in planes) {
+			plane.transform.localScale = new Vector3(0,0,0);
+		}
+	}
+
+
 	void OnTriggerEnter (Collider other) {
 		
 		if(this.playerCount < 1) {
@@ -37,12 +49,11 @@ public class PillarDetect : MonoBehaviour {
 			this.captureProgess = this.captureProgess + 0.5f;
 			if(this.captureProgess >= 100) {
 				this.capturedByPlayer = this.activePlayer;
-				this.transform.parent.renderer.material = other.renderer.sharedMaterial;
+				//this.transform.parent.renderer.material = other.renderer.sharedMaterial;
 				this.transform.parent.tag = "Captured";
-				//Debug.Log(this.capturedByPlayer);
-				//Debug.Log(other.renderer.material);
-				//Debug.Log(this.transform.parent.name);
-			
+				this.associatedPlayerHook = other.playerHook;
+				//Debug.Log(other.transform.Find("polySurface20").renderer.material.shader.name);
+
 			}
 		}
 	}

@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CameraController : MonoBehaviour {
-	public GameObject player;
+	public GameObject toFollow;
 	private Vector3 offset;
 
 	// Use this for initialization
@@ -12,7 +12,7 @@ public class CameraController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void LateUpdate () {
-		transform.position = player.transform.position + offset;
+		transform.position = toFollow.transform.position + offset;
 	}
 
 }
