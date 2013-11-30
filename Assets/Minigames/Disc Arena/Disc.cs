@@ -7,19 +7,29 @@ public class Disc : MonoBehaviour {
 	public float speed = 20f;
 	public OuyaPlayer playerOwner;
 
-	// Use this for initialization
+	private Vector3 lastPosition;
+
 	void Start () {
-		//rigidbody.AddExplosionForce(transform.forward * speed, ForceMode.VelocityChange, 1);
+		lastPosition = transform.position;
 	}
 
 	public void SetOwner(OuyaPlayer owner) {
 		playerOwner = owner;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		rigidbody.velocity = speed * rigidbody.velocity.normalized * Time.deltaTime;
+
+	void FixedUpdate() {
+		//rigidbody.velocity = speed * rigidbody.velocity.normalized;
+
+		Vector3 direction = new Vector3(transform.position - lastPosition);
+		Ray ray = new Ray(lastPosition, direction);
+		RaycastHit hit;
+		if (Physics.Raycast(ray, hit, direction.magnitude)) {
+			// Do something if hit
+		}
+
+		this.lastPosition = transform.position;
 	}
+
 	
 	void OnCollisionEnter(Collision collision) {
 //		Debug.Log(this.ToString() + " collided with " + collision.gameObject.ToString() + " " + collision.relativeVelocity);

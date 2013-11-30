@@ -8,13 +8,14 @@ public class RotateMonocycle : MonoBehaviour {
 	//GameObject monocycle = this.transform.parent;
 
 	void Start () {
-		this.rotationSpeed = transform.parent.transform.parent.transform.parent.rigidbody.velocity.magnitude;
+		this.rotationSpeed = 0;
+		//transform.parent.transform.parent.transform.parent.rigidbody.velocity.magnitude;
 	}
 
 	void Update () {
 	
 		this.rotateWheel(this.rotationSpeed);
-		Debug.Log (this.rotationSpeed);
+		//Debug.Log (this.rotationSpeed);
 		//Debug.Log(rigidbody.velocity);
 
 	}
