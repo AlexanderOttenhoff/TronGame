@@ -40,15 +40,29 @@ public class SwordSwinger : MonoBehaviour {
 	private void Swing(Vector2 swingDir, float now) {
 		if(swingDir != Vector2.zero) {
 			Vector3 swing = new Vector3(swingDir.x, 0.0f, swingDir.y);
-			transform.rotation = Quaternion.LookRotation(swing, Vector3.up);
+			hand.transform.rotation = Quaternion.LookRotation(swing, Vector3.up);
 			
 		} else {
 			Vector3 swing = new Vector3(0.0f, 0.0f, 0.0f);
-			transform.rotation = transform.localRotation;
+			hand.transform.rotation = transform.localRotation;
 		}
 		swingStart = now;
 		sword.SetActive(true);
 
+	}
+
+	void OnTriggerEnter(Collider other) {
+		if(other.gameObject.tag == "Player") {
+			other.gameObject.SendMessage("HandleSwordHit", this);
+			Debug.Log("sword hit");
+		}
+	}
+
+	void OnCollisionEnter(Collision other) {
+		if(other.gameObject.tag == "Player") {
+			other.gameObject.SendMessage("HandleSwordHit", this);
+			Debug.Log("sword hit");
+		}
 	}
 
 }
