@@ -5,12 +5,10 @@ public class PlayerDetect : MonoBehaviour {
 	
 	public float playerProgress = 0.0f;
 	public int ownCaptured = 0;
+	public string playerHook = "";
+	public string playerColor;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		
@@ -19,9 +17,9 @@ public class PlayerDetect : MonoBehaviour {
 		this.ownCaptured = 0;
 		
 		foreach (GameObject own in captured) {
-			if(own.renderer.sharedMaterial.name == this.renderer.sharedMaterial.name) {
+			if(own.associatedPlayerHook == this.playerHook) {
 				this.ownCaptured ++;
-				//Debug.Log (this.ownCaptured);
+				Debug.Log (this.ownCaptured);
 			}
 		}
 		
@@ -45,5 +43,31 @@ public class PlayerDetect : MonoBehaviour {
 	void getPlayerProgress () {
 		//return this.playerProgress;
 		Debug.Log(this.name + "" + this.playerProgress);
+	}
+	
+//	string getPlayerHook () {
+//		return this.playerHook;
+//	}
+	string getPlayerMaterial (string hook) {
+
+		switch (hook) {
+			case "Player1":
+				playerColor = "blue";
+				return playerColor;
+				break;
+			case "Player2":
+				playerColor = "green";
+				return playerColor;
+				break;
+			case "Player3": 
+				playerColor = "orange";
+				return playerColor;
+				break;
+			case "Player4": 
+				playerColor = "red";
+				return playerColor;
+				break;
+		}
+
 	}
 }
